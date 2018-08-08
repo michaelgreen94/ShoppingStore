@@ -1,33 +1,46 @@
-import Product from './Product.js'
+import Product from './Products.js'
 
-let nikes = new Product('nike', '//placehold.it/200x200', 49.99, 15)
-let sandals = new Product('birkenstock', '//placehold.it/200x200', 59.95, 21)
-let boots = new Product('thorogood', '//placehold.it/200x200', 189.99, 6)
 let myStore = new Product()
 
 class ShoeStore {
-  constructor(cart, til) {
+  constructor(cart, til, Product) {
     this.cart = []
     this.til = 0
+    this.Products = [{
+      name: 'nike',
+      img: '//placehold.it/200x200',
+      price: 49.99,
+      quantity: 15
+    }, {
+      name: 'birkenstock',
+      img: '//placehold.it/200x200',
+      price: 59.95,
+      quantity: 21,
+    }, {
+      name: 'thorogood',
+      img: '//placehold.it/200x200',
+      price: 189.99,
+      quantity: 6,
+    }]
+
   }
 
-  purchase() {
-    nikes.purchase()
-    sandals.purchase()
-    boots.purchase()
+  // purchase() {
+  //   nikes.purchase()
+  //   sandals.purchase()
+  //   boots.purchase()
+  // }
 
-  }
+  // get Product() {
+  //   return {
+  //     name: produc
+  //     img: 
+  //     price: 
+  //     quantity: 
+  //   }
+  // }
 
 
-
-  get Product() { //will only get me a copy of my nikes object
-    return {
-      name: nikes.products.name,
-      img: nikes.products.img,
-      price: nikes.products.price,
-      quantity: nikes.products.quantity
-    }
-  }
   //need to be able to add to cart
   //sum up item cost by adding items based on how many times you click (subtotal)
   //come up with tax

@@ -5,11 +5,14 @@ let myService = new ShoeStore()
 
 class Service {
   constructor() {
-
   }
-  purchase() {
 
-  }
+  // purchase() {
+  // }
+
+  // Product() {
+  // }
+
 }
 
 export default Service
