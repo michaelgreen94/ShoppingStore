@@ -1,7 +1,7 @@
-import ShoeStore from './model/ShoeStore.js'
+import Store from './model/Store.js'
 console.log('hello from service');
 
-let myService = new ShoeStore()
+let myService = new Store()
 
 class Service {
   constructor() {

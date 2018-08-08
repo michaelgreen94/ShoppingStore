@@ -1,8 +1,7 @@
-import Service from './Service.js'
-import Product from './model/Product.js';
+import StoreService from './StoreService.js'
 console.log('hello from the controller');
 
-let myController = new Service()
+let myController = new StoreService()
 
 // function draw() {
 //   let myItem = myController.Product

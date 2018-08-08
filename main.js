@@ -1,10 +1,10 @@
-import Controller from './app/components/Controller.js'
+import StoreController from './app/components/StoreController.js'
 console.log('hello from main');
 
 class App {
   constructor() {
     this.Controller = {
-      Controller: new Controller()
+      Controller: new StoreController()
     }
   }
 }
