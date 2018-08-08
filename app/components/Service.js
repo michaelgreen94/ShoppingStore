@@ -1,2 +1,2 @@
-import './model/Store'
-console.log('hello');
+import './model/ShoeStore.js'
+console.log('hello from service');

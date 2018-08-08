@@ -1,2 +1,2 @@
-import './app/components/Controller'
-console.log('hello');
+import './app/components/Controller.js'
+console.log('hello from main');

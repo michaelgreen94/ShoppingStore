@@ -1,2 +1,2 @@
-import './Service'
-console.log('hello');
+import './Service.js'
+console.log('hello from the controller');
