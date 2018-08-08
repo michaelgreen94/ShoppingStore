@@ -4,10 +4,9 @@ let nikes = new Product('nike', '//placehold.it/200x200', 49.99, 15)
 let sandals = new Product('birkenstock', '//placehold.it/200x200', 59.95, 21)
 let boots = new Product('thorogood', '//placehold.it/200x200', 189.99, 6)
 let myStore = new Product()
-console.log(nikes);
 
 class ShoeStore {
-  constructor(cart, til, name, img, price, quantity) {
+  constructor(cart, til) {
     this.cart = []
     this.til = 0
   }
@@ -18,6 +17,8 @@ class ShoeStore {
     boots.purchase()
 
   }
+
+
 
   get Product() { //will only get me a copy of my nikes object
     return {
