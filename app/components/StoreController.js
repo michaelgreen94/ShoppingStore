@@ -27,14 +27,14 @@ function drawCart() {
   for (let i = 0; i < cartItems.length; i++) {
     const item = cartItems[i];
     template += `
-    <h3>${item.name}</h3>`
+    <h3>${item.name} ${item.quantity}</h3>`
   }
   template += `
     <div>
     <h3>Subtotal: ${totals.subtotal.toFixed(2)}</h3>
     <h3>Tax: ${totals.tax.toFixed(2)}</h3>
     <h3>Total: ${totals.total.toFixed(2)}</h3>
-    
+    <button onclick="">CheckOut</button>
     </div>`
   document.getElementById('cart').innerHTML = template
 }

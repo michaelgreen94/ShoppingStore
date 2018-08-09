@@ -36,7 +36,17 @@ class Store {
       return
     }
     item.quantity--
-    this.cart.push(this.Products[index])
+    let cartItem = this.cart.find(cartItem => item.name == cartItem.name)
+    if (cartItem) {
+      cartItem.quantity++
+      return
+    }
+    this.cart.push({
+      name: item.name,
+      price: item.price,
+      quantity: 1
+    })
+
     console.log(this.cart);
   }
 
@@ -48,8 +58,8 @@ class Store {
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
 
-      this.subtotal += item.price
-      this.tax += item.price * 0.06
+      this.subtotal += item.price * item.quantity
+      this.tax += item.price * 0.06 * item.quantity
     }
     this.total = this.subtotal + this.tax
     return {
