@@ -26,10 +26,18 @@ class Store {
     return this.Products
   }
 
+  getCartItems() {
+    return this.cart
+  }
+
   addToCart(index) {
+    let item = this.Products[index]
+    if (item.quantity <= 0) {
+      return
+    }
+    item.quantity--
     this.cart.push(this.Products[index])
     console.log(this.cart);
-    return this.cart
   }
 
   //what am I looking for?
@@ -39,20 +47,16 @@ class Store {
     this.tax = 0
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      if (item.quantity <= 0) {
-        item.quantity = 0
-        return
-      }
-      if (item.quantity > 0) {
-        item.quantity--
-        this.subtotal += item.price
-        this.tax += item.price * 0.06
-      }
+
+      this.subtotal += item.price
+      this.tax += item.price * 0.06
     }
     this.total = this.subtotal + this.tax
-    console.log('subTotal', this.subtotal);
-    console.log('tax', this.tax);
-    console.log('total', this.total);
+    return {
+      subtotal: this.subtotal,
+      tax: this.tax,
+      total: this.total
+    }
   }
 
   checkOut() {

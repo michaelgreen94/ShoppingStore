@@ -18,21 +18,24 @@ function draw() {
     </div>`
   }
   document.getElementById('item').innerHTML = template
-
 }
 
 function drawCart() {
-  let cartItems = service.addToCart()
+  let cartItems = service.getCartItems()
   let template = ''
+  let totals = service.totalCart()
   for (let i = 0; i < cartItems.length; i++) {
     const item = cartItems[i];
     template += `
-    <div>
-    <h3>Subtotal: </h3>
-    <h3>Tax: </h3>
-    <h3>Total: </h3>
-    </div>`
+    <h3>${item.name}</h3>`
   }
+  template += `
+    <div>
+    <h3>Subtotal: ${totals.subtotal.toFixed(2)}</h3>
+    <h3>Tax: ${totals.tax.toFixed(2)}</h3>
+    <h3>Total: ${totals.total.toFixed(2)}</h3>
+    
+    </div>`
   document.getElementById('cart').innerHTML = template
 }
 
@@ -42,12 +45,7 @@ class Controller {
 
   addToCart(index) {
     service.addToCart(index)
-    // this.totalCart()
     drawCart()
-  }
-
-  totalCart(item) {
-    service.totalCart(item)
   }
 
 }

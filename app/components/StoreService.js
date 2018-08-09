@@ -8,12 +8,16 @@ class Service {
     return ss.getItems()
   }
 
+  getCartItems() {
+    return ss.getCartItems()
+  }
+
   addToCart(index) {
-    return ss.addToCart(index)
+    ss.addToCart(index)
   }
 
   totalCart(item) {
-    ss.totalCart(item)
+    return ss.totalCart(item)
   }
 
 }
