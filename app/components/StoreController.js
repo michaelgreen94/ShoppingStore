@@ -19,18 +19,20 @@ function draw() {
     </div>`
   }
   document.getElementById('item').innerHTML = template
+
 }
 
 
 class Controller {
-  constructor() {}
+  constructor() { }
 
   addToCart(index) {
     service.addToCart(index)
+    this.totalCart()
   }
 
-  totalCart(index) {
-    service.totalCart(index)
+  totalCart(item) {
+    service.totalCart(item)
   }
 
 }

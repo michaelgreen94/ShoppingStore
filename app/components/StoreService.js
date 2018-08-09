@@ -4,7 +4,7 @@ console.log('hello from service');
 const ss = new Store()
 
 class Service {
-  constructor() {}
+  constructor() { }
   getItems() {
     return ss.getItems()
   }
@@ -13,8 +13,8 @@ class Service {
     ss.addToCart(index)
   }
 
-  totalCart(index) {
-    ss.totalCart(index)
+  totalCart(item) {
+    ss.totalCart(item)
   }
 
 }
