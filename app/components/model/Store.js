@@ -31,8 +31,33 @@ class Store {
 
   addToCart(index) {
     this.cart.push(this.Products[index])
-    console.log(this.cart);
+    console.log('whats in the cart', this.cart);
+    console.log('subTotal', this.subtotal);
+    console.log('tax', this.tax);
+    console.log('total', this.total);
+  }
 
+  totalCart(index) {
+    let items = this.Products[index]
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.quantity <= 0) {
+        item.quantity = 0
+        return
+      }
+      if (item.quantity > 0) {
+        item.quantity--
+          this.subtotal += item.price
+        this.tax += item.price * 0.6
+        this.total = this.subtotal + this.tax
+      }
+    }
+  }
+
+  checkOut() {
+    this.subtotal = 0
+    this.tax = 0
+    this.total = 0
   }
 
 

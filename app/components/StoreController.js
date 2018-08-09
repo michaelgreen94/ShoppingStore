@@ -23,11 +23,14 @@ function draw() {
 
 
 class Controller {
-  constructor() {
-  }
+  constructor() {}
 
   addToCart(index) {
     service.addToCart(index)
+  }
+
+  totalCart(index) {
+    service.totalCart(index)
   }
 
 }

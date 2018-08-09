@@ -4,14 +4,17 @@ console.log('hello from service');
 const ss = new Store()
 
 class Service {
-  constructor() {
-  }
+  constructor() {}
   getItems() {
     return ss.getItems()
   }
 
   addToCart(index) {
     ss.addToCart(index)
+  }
+
+  totalCart(index) {
+    ss.totalCart(index)
   }
 
 }
