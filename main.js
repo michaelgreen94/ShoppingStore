@@ -4,7 +4,7 @@ console.log('hello from main');
 class App {
   constructor() {
     this.Controller = {
-      Controller: new StoreController()
+      StoreController: new StoreController()
     }
   }
 }

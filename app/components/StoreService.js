@@ -1,17 +1,18 @@
 import Store from './model/Store.js'
 console.log('hello from service');
 
-let myService = new Store()
+const ss = new Store()
 
 class Service {
   constructor() {
   }
+  getItems() {
+    return ss.getItems()
+  }
 
-  // purchase() {
-  // }
-
-  // Product() {
-  // }
+  addToCart(index) {
+    ss.addToCart(index)
+  }
 
 }
 

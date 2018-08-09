@@ -1,45 +1,44 @@
 import Product from './Products.js'
+console.log('hello from store');
 
-let myStore = new Product()
 
-class ShoeStore {
+let shoe = new Product('nike', '//placehold.it/200x200', 49.99, 15)
+let sandal = new Product('birkenstock', '//placehold.it/200x200', 59.95, 21)
+let boot = new Product('thorogood', '//placehold.it/200x200', 189.99, 6)
+
+
+class Store {
   constructor(cart, til, Product) {
     this.cart = []
+    this.subtotal = 0
+    this.tax = 0
+    this.total = 0
     this.til = 0
-    this.Products = [{
-      name: 'nike',
-      img: '//placehold.it/200x200',
-      price: 49.99,
-      quantity: 15
-    }, {
-      name: 'birkenstock',
-      img: '//placehold.it/200x200',
-      price: 59.95,
-      quantity: 21,
-    }, {
-      name: 'thorogood',
-      img: '//placehold.it/200x200',
-      price: 189.99,
-      quantity: 6,
-    }]
+    this.Products = []
+    this.stockItem()
+  }
+
+  stockItem() {
+    this.Products.push(shoe)
+    this.Products.push(sandal)
+    this.Products.push(boot)
+    console.log(this.Products)
+  }
+
+  getItems() {
+    return this.Products
+  }
+
+  addToCart(index) {
+    this.cart.push(this.Products[index])
+    console.log(this.cart);
 
   }
 
-  // purchase() {
-  //   nikes.purchase()
-  //   sandals.purchase()
-  //   boots.purchase()
-  // }
 
-  // get Product() {
-  //   return {
-  //     name: produc
-  //     img: 
-  //     price: 
-  //     quantity: 
-  //   }
-  // }
-
+  //check to see if product is actual product
+  //if none available return out of stock in some way
+  //check quantity to see if any are left in stock
 
   //need to be able to add to cart
   //sum up item cost by adding items based on how many times you click (subtotal)
@@ -50,4 +49,4 @@ class ShoeStore {
 
 }
 
-export default ShoeStore
+export default Store
