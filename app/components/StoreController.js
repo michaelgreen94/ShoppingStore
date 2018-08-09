@@ -1,5 +1,4 @@
 import StoreService from './StoreService.js'
-console.log('hello from the controller');
 
 const service = new StoreService()
 
@@ -22,13 +21,29 @@ function draw() {
 
 }
 
+function drawCart() {
+  let cartItems = service.addToCart()
+  let template = ''
+  for (let i = 0; i < cartItems.length; i++) {
+    const item = cartItems[i];
+    template += `
+    <div>
+    <h3>Subtotal: </h3>
+    <h3>Tax: </h3>
+    <h3>Total: </h3>
+    </div>`
+  }
+  document.getElementById('cart').innerHTML = template
+}
+
 
 class Controller {
   constructor() { }
 
   addToCart(index) {
     service.addToCart(index)
-    this.totalCart()
+    // this.totalCart()
+    drawCart()
   }
 
   totalCart(item) {

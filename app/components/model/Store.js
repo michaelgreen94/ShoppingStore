@@ -1,6 +1,4 @@
 import Product from './Products.js'
-console.log('hello from store');
-
 
 let shoe = new Product('nike', '//placehold.it/200x200', 49.99, 15)
 let sandal = new Product('birkenstock', '//placehold.it/200x200', 59.95, 21)
@@ -22,7 +20,6 @@ class Store {
     this.Products.push(shoe)
     this.Products.push(sandal)
     this.Products.push(boot)
-    console.log(this.Products)
   }
 
   getItems() {
@@ -31,9 +28,11 @@ class Store {
 
   addToCart(index) {
     this.cart.push(this.Products[index])
-    console.log('whats in the cart', this.cart);
+    console.log(this.cart);
+    return this.cart
   }
 
+  //what am I looking for?
   totalCart(item) {
     let items = this.cart
     this.subtotal = 0

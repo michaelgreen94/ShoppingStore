@@ -1,5 +1,4 @@
 import StoreController from './app/components/StoreController.js'
-console.log('hello from main');
 
 class App {
   constructor() {

@@ -1,5 +1,3 @@
-console.log('hello from the product');
-
 class Products {
   constructor(name = '', img = '', price = 0, quantity = 0) {
     this.name = name

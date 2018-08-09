@@ -1,5 +1,4 @@
 import Store from './model/Store.js'
-console.log('hello from service');
 
 const ss = new Store()
 
@@ -10,7 +9,7 @@ class Service {
   }
 
   addToCart(index) {
-    ss.addToCart(index)
+    return ss.addToCart(index)
   }
 
   totalCart(item) {
