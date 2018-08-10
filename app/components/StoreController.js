@@ -18,7 +18,6 @@ function draw() {
     </div>`
   }
   document.getElementById('item').innerHTML = template
-  checkOut()
 }
 
 function drawCart() {
@@ -51,15 +50,17 @@ function checkOut() {
 
 
 class Controller {
-  constructor() {}
+  constructor() { }
 
   addToCart(index) {
     service.addToCart(index)
     drawCart()
+    draw()
   }
 
   checkOut() {
     service.checkOut()
+    drawCart()
   }
 
 }
