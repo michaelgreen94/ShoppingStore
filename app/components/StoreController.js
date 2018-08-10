@@ -57,8 +57,10 @@ class Controller {
   addToCart(index) {
     service.addToCart(index)
     drawCart()
+  }
 
-
+  checkOut() {
+    service.checkOut()
   }
 
 }
