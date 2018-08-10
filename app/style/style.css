@@ -1,0 +1,14 @@
+.display {
+  max-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 10px
+}
+
+.img {
+  display: block;
+  height: 150px;
+  max-width: 200px;
+  max-height: 200px
+}

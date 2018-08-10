@@ -3,7 +3,7 @@ import Store from './model/Store.js'
 const ss = new Store()
 
 class Service {
-  constructor() { }
+  constructor() {}
   getItems() {
     return ss.getItems()
   }
@@ -18,6 +18,10 @@ class Service {
 
   totalCart(item) {
     return ss.totalCart(item)
+  }
+
+  checkOut() {
+    return ss.checkOut()
   }
 
 }

@@ -1,8 +1,8 @@
 import Product from './Products.js'
 
-let shoe = new Product('nike', '//placehold.it/200x200', 49.99, 15)
-let sandal = new Product('birkenstock', '//placehold.it/200x200', 59.95, 21)
-let boot = new Product('thorogood', '//placehold.it/200x200', 189.99, 6)
+let shoe = new Product('nike', 'http://www.lieventavernier.com/images/product/nike%20sb%20clutch-914wxx.jpg', 49.99, 15)
+let sandal = new Product('birkenstock', 'http://cdn.shopify.com/s/files/1/0690/2837/products/AZ_TobOL_800x.png?v=1437597511', 59.95, 21)
+let boot = new Product('thorogood', 'http://workbootsguru.com/wp-content/uploads/2016/02/4.png', 189.99, 6)
 
 
 class Store {
@@ -36,10 +36,10 @@ class Store {
       return
     }
     item.quantity--
-    let cartItem = this.cart.find(cartItem => item.name == cartItem.name)
+      let cartItem = this.cart.find(cartItem => item.name == cartItem.name)
     if (cartItem) {
       cartItem.quantity++
-      return
+        return
     }
     this.cart.push({
       name: item.name,
@@ -73,6 +73,13 @@ class Store {
     this.subtotal = 0
     this.tax = 0
     this.total = 0
+    this.cart = []
+    return {
+      subtotal: this.subtotal,
+      tax: this.tax,
+      total: this.total,
+      cart: this.cart
+    }
   }
 
 
