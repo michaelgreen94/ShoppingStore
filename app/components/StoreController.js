@@ -18,6 +18,7 @@ function draw() {
     </div>`
   }
   document.getElementById('item').innerHTML = template
+  checkOut()
 }
 
 function drawCart() {
@@ -46,8 +47,6 @@ function checkOut() {
   checkOut.tax = 0
   checkOut.total = 0
   checkOut.cart = []
-
-
 }
 
 
